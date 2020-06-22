@@ -110,7 +110,7 @@ namespace CompNet_Calc
                 for (int j = p - 1; j < D.Length; j += 2 * p)
                     filteredD += (j + p <= D.Length)? D.Substring(j, p) : D.Substring(j);
                 var OneCnt = filteredD.Count(c => c == '1');
-                Console.WriteLine($"{2 + 1 + i}) Для {p} бита смотрим позиции: {filteredD} => {OneCnt} единицы ({(OneCnt % 2 == 0? "четное" : "нечётное" )}) => устанавливаем {OneCnt % 2}");
+                Console.WriteLine($"{2 + 1 + i}) Для {p} бита смотрим позиции: {filteredD} => {OneCnt} единиц(ы) ({(OneCnt % 2 == 0? "четное" : "нечётное" )}) => устанавливаем {OneCnt % 2}");
                 var t = D.ToCharArray();
                 t[p - 1] = (OneCnt % 2).ToString()[0];
                 D = new string(t);
@@ -130,7 +130,7 @@ namespace CompNet_Calc
 
             HammingCode("1011");
             HammingCode("1 0 0 1 0 0 1 0 1 1 1 0 0 0 1".Replace(" ",""));
-            //Console.WriteLine("\u0331");
+            //Console.WriteLine("\u0331"); diacratic underline
         }
     }
 }
